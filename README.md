@@ -25,6 +25,7 @@ The project also features tools for speciation (calculation of genomic distance)
 ## Genome visualization
 HydroNEAT comes with a great visualizer, that shows you what a given genome will look like as a network.
 ![graph_image](https://i.imgur.com/P8iSfbC.png)
+
 For more info, look at GenomePrinter.java.
 
 ## Running it on your own
