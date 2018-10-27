@@ -3,7 +3,7 @@ Follow development on [YouTube](https://www.youtube.com/channel/UCQ3I9UG_zvcQOs6
 
 This is an implementation of NEAT. It is experimental for now, but it does solve XOR satisfactorily. I've tried to keep this implementation as true to the [original paper](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) as possible.
 
-# Features
+## Features
 * Genomes
    * Add connection mutation
    * Add node mutation
@@ -21,8 +21,10 @@ The project also features tools for speciation (calculation of genomic distance)
    1. A percentage of the next generation is created using asexual reproduction (mutation without crossover)
    1. All new genomes are either perturbed in their weights, or assigned new weights - both happen randomly
   
-# Running it on your own
+## Running it on your own
 Be sure to tweak the Evaluator to suit your needs. If you want to run this for yourself, the tests are a good place to start.
 
-# Contact
-I can be contacted on hydrozoa.rs [at] gmail [dot] com. If you use this code, please credit me.
+## Contact
+I can be contacted on hydrozoa.rs [at] gmail [dot] com. 
+
+If you use this code, please credit me.
