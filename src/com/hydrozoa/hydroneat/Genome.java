@@ -148,12 +148,34 @@ public class Genome {
 			success = true;
 		}
 		if (success == false) {
-			//System.out.println("Tried, but could not add more connections");
+			//System.out.println("Tried, but could not do add connection mutation");
 		}
 	}
 	
+	/**
+	 * Mutates the Genome in a way that adds a NodeGene to the Genome.
+	 * 
+	 * @param r							Random instance, from which we get our randomness
+	 * @param connectionInnovation		Innovation counter for the connection genes of the run
+	 * @param nodeInnovation			Innovation counter for the node genes of the run
+	 */
 	public void addNodeMutation(Random r, Counter connectionInnovation, Counter nodeInnovation) {
-		ConnectionGene con = (ConnectionGene) connections.values().toArray()[r.nextInt(connections.size())]; // pick a random connection
+		ConnectionGene con = null;
+		boolean foundSuitableConnection = false;
+		for (int i = 0; i < getConnectionGenes().size(); i++) {
+			con = (ConnectionGene) connections.values().toArray()[i]; // pick a connection
+			if (con.isExpressed()) {
+				 foundSuitableConnection = true;
+				 break;
+			}
+		}
+		
+		if (!foundSuitableConnection) {
+			System.out.println("Tried, but could not do add node mutation");
+			return;
+		}
+		
+		
 		NodeGene inNode = nodes.get(con.getInNode());
 		NodeGene outNode = nodes.get(con.getOutNode());
 		

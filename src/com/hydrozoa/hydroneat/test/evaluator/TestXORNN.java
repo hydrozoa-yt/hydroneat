@@ -6,6 +6,7 @@ import java.util.Random;
 import com.hydrozoa.hydroneat.ConnectionGene;
 import com.hydrozoa.hydroneat.Counter;
 import com.hydrozoa.hydroneat.Evaluator;
+import com.hydrozoa.hydroneat.FitnessGenome;
 import com.hydrozoa.hydroneat.GenesisGenomeProvider;
 import com.hydrozoa.hydroneat.Genome;
 import com.hydrozoa.hydroneat.NEATConfiguration;
@@ -78,6 +79,10 @@ public class TestXORNN {
 					totalDistance += Math.pow(distance, 2);
 				}
 				
+				if (g.getConnectionGenes().size() > 20) { // try to favor smaller solutions
+					totalDistance += 1f * (g.getConnectionGenes().size()-20);
+				}
+				
 				//System.out.println("Total distance: "+totalDistance);
 				
 				return 100f-totalDistance;
@@ -111,7 +116,7 @@ public class TestXORNN {
 //				System.out.println("\t\t Index="+k+"\t N"+fitnessGenome.genome.getNodeGenes().size()+"\t C"+fitnessGenome.genome.getConnectionGenes().size()+"\t fitness="+fitnessGenome.fitness);
 //			}
 			
-			if (i % 1000 == 0) {
+			if (i % 500 == 0) {
 				gPrinter.showGenome(eva.getFittestGenome().genome, ""+i);
 			}
 		}
