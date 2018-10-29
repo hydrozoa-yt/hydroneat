@@ -22,11 +22,13 @@ The project also features tools for speciation (calculation of genomic distance)
    1. A percentage of the next generation is created using asexual reproduction (mutation without crossover)
    1. All new genomes are either perturbed in their weights, or assigned new weights - both happen randomly
   
-## Genome visualization
-HydroNEAT comes with a great visualizer, that shows you what a given genome will look like as a network.
+## Visualization
+HydroNEAT comes with a visualizer, that shows you what a given genome will look like as a network.
 ![graph_image](https://i.imgur.com/uffwaKh.png)
-
 For more info, look at GenomePrinter.java.
+
+You can also keep track of any variable when training, using LiveXYChart.java.
+![chart_image](https://i.imgur.com/9e8cwcA.png)
 
 ## Running it on your own
 Be sure to tweak the Evaluator to suit your needs. If you want to run this for yourself, the tests are a good place to start.

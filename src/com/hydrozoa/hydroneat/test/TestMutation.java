@@ -7,6 +7,7 @@ import com.hydrozoa.hydroneat.Genome;
 import com.hydrozoa.hydroneat.Counter;
 import com.hydrozoa.hydroneat.NodeGene;
 import com.hydrozoa.hydroneat.NodeGene.TYPE;
+import com.hydrozoa.hydroneat.visual.GenomePrinter;
 
 public class TestMutation {
 	

@@ -6,6 +6,7 @@ import com.hydrozoa.hydroneat.ConnectionGene;
 import com.hydrozoa.hydroneat.Genome;
 import com.hydrozoa.hydroneat.NodeGene;
 import com.hydrozoa.hydroneat.NodeGene.TYPE;
+import com.hydrozoa.hydroneat.visual.GenomePrinter;
 
 /**
  * @author hydrozoa

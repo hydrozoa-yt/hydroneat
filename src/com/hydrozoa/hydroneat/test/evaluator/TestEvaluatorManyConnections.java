@@ -12,7 +12,7 @@ import com.hydrozoa.hydroneat.NEATConfiguration;
 import com.hydrozoa.hydroneat.NeuralNetwork;
 import com.hydrozoa.hydroneat.NodeGene;
 import com.hydrozoa.hydroneat.NodeGene.TYPE;
-import com.hydrozoa.hydroneat.test.GenomePrinter;
+import com.hydrozoa.hydroneat.visual.GenomePrinter;
 
 /**
  * Tests a simple evaluator that runs for 100 generations, and scores fitness based on the amount of connections in the network.

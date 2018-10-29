@@ -13,7 +13,8 @@ import com.hydrozoa.hydroneat.NEATConfiguration;
 import com.hydrozoa.hydroneat.NeuralNetwork;
 import com.hydrozoa.hydroneat.NodeGene;
 import com.hydrozoa.hydroneat.NodeGene.TYPE;
-import com.hydrozoa.hydroneat.test.GenomePrinter;
+import com.hydrozoa.hydroneat.visual.GenomePrinter;
+import com.hydrozoa.hydroneat.visual.LiveXYChart;
 
 /**
  * @author hydrozoa
@@ -85,14 +86,19 @@ public class TestXORNN {
 				
 				//System.out.println("Total distance: "+totalDistance);
 				
-				return 100f-totalDistance;
+				return 100f-totalDistance*5f;
 			}
 		};
 		
+		LiveXYChart fitnessChart = new LiveXYChart("fitness over time", "generations", "fitness", 1000);
+		
 		GenomePrinter gPrinter = new GenomePrinter();
 		
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i < 1000; i++) {
 			eva.evaluateGeneration(r);
+			
+			fitnessChart.addDataPoint(new Double(i), new Double(eva.getFittestGenome().fitness));
+			
 			System.out.println("Generation: "+i);
 			System.out.println("\tHighest fitness: "+df.format(eva.getFittestGenome().fitness));
 			System.out.println("\tAmount of genomes: "+eva.getGenomeAmount());

@@ -11,7 +11,7 @@ import com.hydrozoa.hydroneat.Genome;
 import com.hydrozoa.hydroneat.NEATConfiguration;
 import com.hydrozoa.hydroneat.NodeGene;
 import com.hydrozoa.hydroneat.NodeGene.TYPE;
-import com.hydrozoa.hydroneat.test.GenomePrinter;
+import com.hydrozoa.hydroneat.visual.GenomePrinter;
 
 /**
  * Tests a simple evaluator that runs for 1000 generations, and scores fitness based on how close the sum of the weights is to 100.
