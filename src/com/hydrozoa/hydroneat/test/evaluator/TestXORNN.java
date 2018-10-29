@@ -59,7 +59,7 @@ public class TestXORNN {
 			}
 		};
 		
-		NEATConfiguration conf = new NEATConfiguration(500);
+		NEATConfiguration conf = new NEATConfiguration(1000);
 		
 		Evaluator eva = new Evaluator(conf, provider, nodeInn, connInn) {
 			@Override

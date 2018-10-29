@@ -62,7 +62,7 @@ public abstract class Evaluator {
 		
 		fittestGenome = evaluatedGenomes.get(0);
 		
-		/* Kill off worst 75% of genomes */
+		/* Kill off worst 9/10 of genomes */
 		int cutoffIndex = evaluatedGenomes.size() / 10;
 		Iterator<FitnessGenome> it = evaluatedGenomes.iterator();
 		int index = 0;

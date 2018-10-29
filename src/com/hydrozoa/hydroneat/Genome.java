@@ -160,21 +160,20 @@ public class Genome {
 	 * @param nodeInnovation			Innovation counter for the node genes of the run
 	 */
 	public void addNodeMutation(Random r, Counter connectionInnovation, Counter nodeInnovation) {
-		ConnectionGene con = null;
-		boolean foundSuitableConnection = false;
-		for (int i = 0; i < getConnectionGenes().size(); i++) {
-			con = (ConnectionGene) connections.values().toArray()[i]; // pick a connection
-			if (con.isExpressed()) {
-				 foundSuitableConnection = true;
-				 break;
+		List<ConnectionGene> suitableConnections = new LinkedList<ConnectionGene>();	// search genome for all expressed connections, and put them in a list
+		for (ConnectionGene connection : connections.values()) {
+			if (connection.isExpressed()) {
+				suitableConnections.add(connection);
 			}
 		}
 		
-		if (!foundSuitableConnection) {
-			System.out.println("Tried, but could not do add node mutation");
+		if (suitableConnections.isEmpty()) {
+			//System.out.println("Tried, but could not do add node mutation");
 			return;
 		}
 		
+		int index = r.nextInt(suitableConnections.size());
+		ConnectionGene con = suitableConnections.get(index);
 		
 		NodeGene inNode = nodes.get(con.getInNode());
 		NodeGene outNode = nodes.get(con.getOutNode());
